@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: aa5945c9f96a567499ee621d8a299619
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: balconies200
+    100004: floors200
+    100006: floors2000
+    100008: mainA200
+    100010: roof200
+    100012: stairs200
+    400000: //RootNode
+    400002: balconies200
+    400004: floors200
+    400006: floors2000
+    400008: mainA200
+    400010: roof200
+    400012: stairs200
+    2100000: Buildings3_jpg
+    2100002: bp1concrete01_jpg
+    2100004: Material01
+    2300000: balconies200
+    2300002: floors200
+    2300004: floors2000
+    2300006: mainA200
+    2300008: roof200
+    2300010: stairs200
+    3300000: balconies200
+    3300002: floors200
+    3300004: floors2000
+    3300006: mainA200
+    3300008: roof200
+    3300010: stairs200
+    4300000: mainA200
+    4300002: floors2000
+    4300004: roof200
+    4300006: floors200
+    4300008: stairs200
+    4300010: balconies200
+    6400000: balconies200
+    6400002: floors200
+    6400004: floors2000
+    6400006: mainA200
+    6400008: roof200
+    6400010: stairs200
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buildings3_jpg
+    second: {fileID: 2100000, guid: 760c6878115ecb94c81d87613767ef76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material01
+    second: {fileID: 2100000, guid: 09650a4a29124cd4eb5521063f023d37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bp1concrete01_jpg
+    second: {fileID: 2100000, guid: 757d5b8d9dc563f4488eebd85871546c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
