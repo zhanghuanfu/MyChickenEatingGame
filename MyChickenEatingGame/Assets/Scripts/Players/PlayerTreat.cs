@@ -74,7 +74,7 @@ public class PlayerTreat : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            BeenShot();
+            DropBlood();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -102,7 +102,7 @@ public class PlayerTreat : MonoBehaviour {
         }
     }
 
-    void BeenShot()
+    void DropBlood()
     {
         int damage = Random.Range(0, Hp);
         Hp -= damage;
@@ -205,7 +205,8 @@ public class PlayerTreat : MonoBehaviour {
         {
             //Hp = 100;
             Debug.Log("Your Hp is collapse ! Game Over !");
-            GameObject.Find("Player").GetComponent<PlayerTreat>().enabled = false;
+            //GameObject.Find("Player").GetComponent<PlayerTreat>().enabled = false;
+            enabled = false;
             return true;
         }
         return false;
