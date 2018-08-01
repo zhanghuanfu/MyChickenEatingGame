@@ -644,7 +644,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ce068b94f54e52549beb3f053a4e9d78, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_VSS Vintorez
+      value: VSS
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce068b94f54e52549beb3f053a4e9d78, type: 3}
       propertyPath: m_LocalScale.x
@@ -947,7 +947,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: af6bac3dda809934cb058d63f859be55, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_Vector
+      value: Vector
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: af6bac3dda809934cb058d63f859be55, type: 3}
       propertyPath: m_LocalScale.x
@@ -1043,7 +1043,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fad13ff09b2061648a49785cf8fc3e4b, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_Groza
+      value: Groza
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fad13ff09b2061648a49785cf8fc3e4b, type: 3}
       propertyPath: m_LocalScale.x
@@ -1300,6 +1300,10 @@ Prefab:
     - target: {fileID: 400000, guid: 96f6f6ea09af9094e8aeaa3fa56b3621, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 96f6f6ea09af9094e8aeaa3fa56b3621, type: 3}
+      propertyPath: m_Name
+      value: AKM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96f6f6ea09af9094e8aeaa3fa56b3621, type: 3}
@@ -1567,7 +1571,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c7fa2377abc316f4aa2f64f4af5b906d, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_SCAR-L
+      value: SCAR_L
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c7fa2377abc316f4aa2f64f4af5b906d, type: 3}
       propertyPath: m_LocalScale.x
@@ -1789,7 +1793,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4edb3da921f04c2439c87606a77cd6ad, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_M16A4
+      value: M16
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4edb3da921f04c2439c87606a77cd6ad, type: 3}
       propertyPath: m_LocalScale.x
@@ -2255,7 +2259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 96f6f6ea09af9094e8aeaa3fa56b3621, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_AKM
+      value: AKM
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 96f6f6ea09af9094e8aeaa3fa56b3621, type: 3}
       propertyPath: m_LocalScale.x
@@ -2627,7 +2631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fe81efbbb4c77134b9c92f97b996d56c, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_AWM
+      value: AWM
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fe81efbbb4c77134b9c92f97b996d56c, type: 3}
       propertyPath: m_LocalScale.x
@@ -2749,6 +2753,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c81551af9e2414a87934fc50fd8a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AKM: {fileID: 1363502716}
+  VSS: {fileID: 500788025}
+  Vector: {fileID: 720681726}
+  SCAR_L: {fileID: 1002146400}
+  M16: {fileID: 1056247868}
+  Karabiner98: {fileID: 1948804694}
+  Groza: {fileID: 756521261}
+  AWM: {fileID: 1685862125}
+  Weapons:
+  - {fileID: 1363502716}
+  - {fileID: 500788025}
+  - {fileID: 720681726}
+  - {fileID: 1002146400}
+  - {fileID: 1056247868}
+  - {fileID: 1948804694}
+  - {fileID: 756521261}
+  - {fileID: 1685862125}
 --- !u!1001 &1705294779
 Prefab:
   m_ObjectHideFlags: 0
@@ -3323,7 +3344,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 024ba70f3d82b9241aca37e28b4a675d, type: 3}
       propertyPath: m_Name
-      value: Wp_Gun_Karabiner 98 Kurz
+      value: Karabiner98
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 024ba70f3d82b9241aca37e28b4a675d, type: 3}
       propertyPath: m_LocalScale.x

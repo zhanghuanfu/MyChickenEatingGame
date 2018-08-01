@@ -86,9 +86,10 @@ public class RoleMove : MonoBehaviour {
 
     void PicGunEventListener()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            _animator.SetBool("WithGun", true);
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //  _animator.SetBool("WithGun", true);
+        //}
+        Debug.Log("You have Nothing to pick !");
     }
 }
