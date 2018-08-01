@@ -151,7 +151,22 @@ ModelImporter:
     9500000: //RootNode
     13700000: M_BaseBody_006
     13700002: M_Face_06
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_BaseBody_01
+    second: {fileID: 2100000, guid: 116ba0d4b3cc6dd4496f26e4bf37b14e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eyes_02
+    second: {fileID: 2100000, guid: 63e769e3020a25d4a805caa1efa02f94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Face_06_2
+    second: {fileID: 2100000, guid: c870bee24f982084f8681d3af77ea3e2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -182,19 +197,19 @@ ModelImporter:
     - serializedVersion: 16
       name: RolePickGun
       takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 72
+      firstFrame: 22
+      lastFrame: 39
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -107.47
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
