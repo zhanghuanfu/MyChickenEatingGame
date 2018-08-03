@@ -8,16 +8,19 @@ public class RoleGunPick : MonoBehaviour {
 
     public GameObject[] Weapons;
     private GameObject _currentGun;
+    //the shoot time accumulate
+    private float shotTimeSum;
 
     // if collided with gun
     private bool isTrigger;
-
     // record the collider
     private Collider other;
     
     // Use this for initialization
     void Start () {
         _animator = GetComponent<Animator>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 	
 	// Update is called once per frame
@@ -25,6 +28,7 @@ public class RoleGunPick : MonoBehaviour {
 
         GunStateEventListener();
 
+        Shoot();       
     }
 
     void GunStateEventListener()
@@ -120,5 +124,52 @@ public class RoleGunPick : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.Log(collision.gameObject.name);
+    }
+
+    void Shoot()
+    {
+        if (_currentGun == null) return;
+
+        if (!Input.GetButton("Fire1")) return;
+
+        Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
+        Debug.DrawRay(ray.origin, ray.direction);
+
+        RaycastHit hit;
+        bool detected = Physics.Raycast(ray, out hit);
+
+        if (detected)
+        {
+            Debug.Log(hit.collider.name);
+        }
+
+        var weaponController = _currentGun.GetComponent<Weapon>();
+        if (weaponController == null) return;
+        var shotInterval = weaponController.shotInterval;
+        shotTimeSum += Time.deltaTime;
+        if (shotTimeSum < shotInterval) return;
+
+        var source = _currentGun.GetComponent<AudioSource>();
+        if (source != null)
+        {
+            source.Play();
+            shotTimeSum = 0;
+        }
+
+        var muzzleFlash = _currentGun.transform.Find("MuzzleFlash");
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.gameObject.SetActive(true);
+            Invoke("HideFlash", 0.05f);
+        }
+    }
+
+    void HideFlash()
+    {
+        var muzzleFlash = _currentGun.transform.Find("MuzzleFlash");
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.gameObject.SetActive(false);
+        }
     }
 }
