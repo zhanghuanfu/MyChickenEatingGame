@@ -35,8 +35,6 @@ public class RoleMove : MonoBehaviour {
         CrouchEventNoGunListener();
 
         ProneEventNoGunListener();
-
-        PicGunEventListener();
     }
 
     void JumpEventNoGunListener()
@@ -82,14 +80,5 @@ public class RoleMove : MonoBehaviour {
             }
             _animator.SetBool("Prone", false);
         }
-    }
-
-    void PicGunEventListener()
-    {
-        //if (Input.GetKeyDown(KeyCode.F))
-        //{
-        //  _animator.SetBool("WithGun", true);
-        //}
-        Debug.Log("You have Nothing to pick !");
     }
 }
