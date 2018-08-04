@@ -11,6 +11,9 @@ public class RoleGunPick : MonoBehaviour {
     //the shoot time accumulate
     private float shotTimeSum;
 
+    //shoot hole
+    public GameObject Hole;
+
     // if collided with gun
     private bool isTrigger;
     // record the collider
@@ -155,13 +158,25 @@ public class RoleGunPick : MonoBehaviour {
             source.Play();
             shotTimeSum = 0;
         }
-
+        //shoot flash
         var muzzleFlash = _currentGun.transform.Find("MuzzleFlash");
         if (muzzleFlash != null)
         {
             muzzleFlash.gameObject.SetActive(true);
             Invoke("HideFlash", 0.05f);
         }
+
+        //shoot bullethole
+        var hole = Instantiate(Hole);
+
+        Debug.Log(hit.transform.position);
+        hole.transform.position = hit.point;
+        hole.transform.rotation = hit.collider.gameObject.transform.rotation;
+
+        //hole.transform.Rotate(new Vector3(90, 0, 0));
+        //hole.transform.rotation = Quaternion.Euler(90f, 0.0f, 0.0f);
+
+        hole.SetActive(true);
     }
 
     void HideFlash()
