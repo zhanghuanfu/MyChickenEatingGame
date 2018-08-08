@@ -5,6 +5,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     public float shotInterval;
+    public float Damage = 13;
+
 	// Use this for initialization
 	void Start () {
 		

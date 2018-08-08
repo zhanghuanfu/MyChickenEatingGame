@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTreat : MonoBehaviour {
-    public int Hp = 100;
+    public float Hp = 100;
     public int Energy = 0;
+    public Transform PlayerRelifePoint;
 
     float _energyDecreaseTimer;
     float _energyToHpTimer;
 
-	// Use this for initialization
-	void Start () {
+    Animator _animator;
+
+    // Use this for initialization
+    void Start () {
+
+        _animator = GetComponent<Animator>();
         HpFullCheck();
         HpLowestCheck();
         EnergyFullCheck();
@@ -104,7 +109,7 @@ public class PlayerTreat : MonoBehaviour {
 
     void DropBlood()
     {
-        int damage = Random.Range(0, Hp);
+        float damage = Random.Range(0f, Hp);
         Hp -= damage;
         Debug.Log("You have been shot, your Hp is : " + Hp);
     }
@@ -230,5 +235,25 @@ public class PlayerTreat : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+
+    public void DoDamageToPlayer(float damage)
+    {
+        Debug.Log("*****************************************");
+        Hp -= damage;
+        if (Hp <= 0) PlayerOnDead();
+    }
+
+    void PlayerOnDead()
+    {
+        _animator.SetTrigger("EnemyDying");
+    }
+
+    void PlayerFinishedDying()
+    {
+        _animator.SetTrigger("EnemyReLife");
+        transform.position = PlayerRelifePoint.position;
+        Hp = 100;
     }
 }

@@ -167,16 +167,34 @@ public class RoleGunPick : MonoBehaviour {
         }
 
         //shoot bullethole
+        if (detected)
+        {
+        if (hit.collider.tag != "enemy") ShootBulletHole(hit);
+
+        //send Message hit someone
+        hit.collider.SendMessage("DoDamageToEnemy", weaponController.Damage, SendMessageOptions.DontRequireReceiver);
+        }
+        
+    }
+
+    void ShootBulletHole(RaycastHit hit)
+    {
         var hole = Instantiate(Hole);
 
         Debug.Log(hit.transform.position);
-        hole.transform.position = hit.point;
-        hole.transform.rotation = hit.collider.gameObject.transform.rotation;
+        hole.transform.position = hit.point + hit.normal / 1000;
+        //set hole image the bule axis to hit`s vertical face direction
+        hole.transform.forward = hit.normal;
 
+        //Debug.DrawRay(hit.point, hit.normal, Color.red, 5);
+
+        //hole.transform.rotation = hit.collider.gameObject.transform.rotation;
         //hole.transform.Rotate(new Vector3(90, 0, 0));
         //hole.transform.rotation = Quaternion.Euler(90f, 0.0f, 0.0f);
 
         hole.SetActive(true);
+
+        Destroy(hole, 6);
     }
 
     void HideFlash()
