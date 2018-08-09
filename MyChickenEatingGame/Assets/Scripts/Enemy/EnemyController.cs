@@ -78,11 +78,17 @@ public class EnemyController : MonoBehaviour {
         if (Hp <= 0) return;
 
         Hp -= damage;
+
+        float realDamage = damage;
+        if (Hp < 0) realDamage = damage + Hp;
+        CountUI.getInstance.SetCauseDamage(realDamage);
+
         if (Hp <= 0) EnemyOnDead();
     }
 
     void EnemyOnDead()
     {
+        CountUI.getInstance.SetKills(1);
         _animator.SetTrigger("EnemyDying");
         _agent.isStopped = true;
     }

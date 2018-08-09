@@ -244,11 +244,18 @@ public class PlayerTreat : MonoBehaviour {
         if (Hp <= 0) return;
 
         Hp -= damage;
+
+        float realDamage = damage;
+        if (Hp < 0) realDamage = damage + Hp;
+        CountUI.getInstance.SetBurdenDamage(realDamage);
+        CountUI.getInstance.SetHp(Hp);
+
         if (Hp <= 0) PlayerOnDead();
     }
 
     void PlayerOnDead()
     {
+        CountUI.getInstance.SetDeath(1);
         _animator.SetTrigger("PlayerDying");
     }
 
@@ -257,5 +264,6 @@ public class PlayerTreat : MonoBehaviour {
         _animator.SetTrigger("PlayerReLife");
         transform.position = PlayerRelifePoint.position;
         Hp = 100;
+        CountUI.getInstance.SetHp(Hp);
     }
 }
