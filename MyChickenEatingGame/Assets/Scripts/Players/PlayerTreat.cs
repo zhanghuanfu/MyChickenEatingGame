@@ -240,19 +240,21 @@ public class PlayerTreat : MonoBehaviour {
 
     public void DoDamageToPlayer(float damage)
     {
-        Debug.Log("*****************************************");
+        //cant`t shoot the dead body
+        if (Hp <= 0) return;
+
         Hp -= damage;
         if (Hp <= 0) PlayerOnDead();
     }
 
     void PlayerOnDead()
     {
-        _animator.SetTrigger("EnemyDying");
+        _animator.SetTrigger("PlayerDying");
     }
 
     void PlayerFinishedDying()
     {
-        _animator.SetTrigger("EnemyReLife");
+        _animator.SetTrigger("PlayerReLife");
         transform.position = PlayerRelifePoint.position;
         Hp = 100;
     }

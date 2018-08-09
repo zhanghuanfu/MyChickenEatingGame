@@ -196,7 +196,7 @@ ModelImporter:
     - serializedVersion: 16
       name: StandDeath
       takeName: mixamo.com
-      firstFrame: 0
+      firstFrame: 6
       lastFrame: 77
       wrapMode: 0
       orientationOffsetY: -37.5

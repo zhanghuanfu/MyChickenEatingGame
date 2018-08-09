@@ -169,7 +169,8 @@ public class RoleGunPick : MonoBehaviour {
         //shoot bullethole
         if (detected)
         {
-        if (hit.collider.tag != "enemy") ShootBulletHole(hit);
+            //TODO more
+            if (hit.collider.tag != "enemy") ShootBulletHole(hit);
 
         //send Message hit someone
         hit.collider.SendMessage("DoDamageToEnemy", weaponController.Damage, SendMessageOptions.DontRequireReceiver);

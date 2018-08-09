@@ -4105,7 +4105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8b98fea264c944e92c79e48b55df2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotInterval: 0.1
+  shotInterval: 2.5
   Damage: 13
 --- !u!1 &1554728598
 GameObject:
@@ -5621,8 +5621,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 100
   ShootDistance: 20
+  discoverDistance: 500
   EnemyGun: {fileID: 1542860296}
-  EnemyRelifePoint: {fileID: 0}
+  EnemyRelifePoint: {fileID: 471679909}
   Target: {fileID: 1727315680}
 --- !u!1 &2079377451
 GameObject:
