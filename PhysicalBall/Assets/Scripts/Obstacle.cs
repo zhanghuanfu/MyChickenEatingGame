@@ -21,5 +21,10 @@ public class Obstacle : MonoBehaviour {
     {
         Hp -= 1;
         HpText.text = Hp.ToString();
+
+        if (Hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

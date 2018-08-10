@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    public float ForceSize = 10;
+    //public float ForceSize = 10;
     Rigidbody2D rigidBall;
-    public Transform EmitPosition;
+    public Transform ResetPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +16,7 @@ public class Ball : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        EmitBall();
+        //EmitBall();
 
 	}
 
@@ -28,18 +28,19 @@ public class Ball : MonoBehaviour {
             Vector2 direction = mousePos - transform.position;
             direction.Normalize();
 
-            rigidBall.bodyType = RigidbodyType2D.Dynamic;
-            rigidBall.AddForce(direction * ForceSize, ForceMode2D.Impulse);
+            ////rigidBall.bodyType = RigidbodyType2D.Dynamic;
+            //rigidBall.AddForce(direction * ForceSize, ForceMode2D.Impulse);
         }
     }
 
     public void ResetBall()
     {
-        transform.position = EmitPosition.position;
+        transform.position = ResetPosition.position;
 
-        //rigidBall.velocity = Vector2.zero;
-        //rigidBall.angularVelocity = 0;
-        //rigidBall.mass = 0;
-        rigidBall.bodyType = RigidbodyType2D.Static;
+        rigidBall.velocity = Vector2.zero;
+        rigidBall.angularVelocity = 0;
+
+        GetComponent<CircleCollider2D>().sharedMaterial.bounciness = 0;
+        //rigidBall.bodyType = RigidbodyType2D.Static;
     }
 }
