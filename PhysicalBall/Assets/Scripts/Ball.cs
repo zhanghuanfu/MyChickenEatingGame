@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    //public float ForceSize = 10;
+    public float ForceSize = 10;
     Rigidbody2D rigidBall;
+    public Transform EmitPosition;
     public Transform ResetPosition;
 
-	// Use this for initialization
-	void Start () {
+    public PhysicsMaterial2D Bounce;
+    public PhysicsMaterial2D NoBounce;
+
+    // Use this for initialization
+    void Start () {
         rigidBall = GetComponent<Rigidbody2D>();
     }
 	
@@ -20,17 +24,24 @@ public class Ball : MonoBehaviour {
 
 	}
 
-    void EmitBall()
+    public void EmitBall()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 direction = mousePos - transform.position;
-            direction.Normalize();
+        BeforeEmit();
 
-            ////rigidBall.bodyType = RigidbodyType2D.Dynamic;
-            //rigidBall.AddForce(direction * ForceSize, ForceMode2D.Impulse);
-        }
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePos - EmitPosition.position;
+        direction.Normalize();
+
+        rigidBall.AddForce(direction * ForceSize, ForceMode2D.Impulse);
+    }
+
+    void BeforeEmit()
+    {        
+        transform.position = EmitPosition.position;
+        rigidBall.velocity = Vector2.zero;
+        rigidBall.angularVelocity = 0;
+
+        GetComponent<CircleCollider2D>().sharedMaterial = Bounce;
     }
 
     public void ResetBall()
@@ -40,7 +51,6 @@ public class Ball : MonoBehaviour {
         rigidBall.velocity = Vector2.zero;
         rigidBall.angularVelocity = 0;
 
-        GetComponent<CircleCollider2D>().sharedMaterial.bounciness = 0;
-        //rigidBall.bodyType = RigidbodyType2D.Static;
+        GetComponent<CircleCollider2D>().sharedMaterial = NoBounce;
     }
 }
