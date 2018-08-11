@@ -5,7 +5,10 @@ using UnityEngine;
 public class Ball : MonoBehaviour {
 
     public float ForceSize = 10;
+    public int Damage = 1;
     Rigidbody2D rigidBall;
+    public bool IsRunning;
+
     public Transform EmitPosition;
     public Transform ResetPosition;
 
@@ -33,6 +36,8 @@ public class Ball : MonoBehaviour {
         direction.Normalize();
 
         rigidBall.AddForce(direction * ForceSize, ForceMode2D.Impulse);
+
+        IsRunning = true;
     }
 
     void BeforeEmit()
@@ -52,5 +57,8 @@ public class Ball : MonoBehaviour {
         rigidBall.angularVelocity = 0;
 
         GetComponent<CircleCollider2D>().sharedMaterial = NoBounce;
+
+        IsRunning = false;
+        BallManager.GetInstance.OneBallBack();
     }
 }

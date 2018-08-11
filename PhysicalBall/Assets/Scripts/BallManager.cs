@@ -5,10 +5,11 @@ using UnityEngine;
 public class BallManager : MonoBehaviour {
 
     public float EmitInterval = 0.5f;
+    public static BallManager GetInstance;
 
     // Use this for initialization
     void Start () {
-		
+        GetInstance = this;
 	}
 	
 	// Update is called once per frame
@@ -23,16 +24,30 @@ public class BallManager : MonoBehaviour {
     {
         if (Input.GetMouseButtonUp(0))
         {
-            //var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //Vector2 direction = mousePos - EmitPosition.position;
-            //direction.Normalize();
-
             for (int i = 0; i < transform.childCount; i ++)
             {
                 transform.GetChild(i).GetComponent<Ball>().EmitBall();
 
                 yield return new WaitForSeconds(EmitInterval);
             }            
+        }
+    }
+
+    public bool CheckAllBallBack()
+    {
+        foreach (Transform child in transform)
+        {
+            var ball = child.GetComponent<Ball>();
+            if (ball.IsRunning) return false;
+        }
+        return true;
+    }
+
+    public void OneBallBack()
+    {
+        if(CheckAllBallBack())
+        {
+            ObstacleManager.GetInstance.ObstacleLineUp();
         }
     }
 }
